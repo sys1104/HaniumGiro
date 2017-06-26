@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GIRO</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="notice">공지</string>
+    <string name="message">기타세입금 납부 메뉴 변경안내</string>
+    <string name="NationalTax">국세</string>
+    <string name="giroTax">\n   지로납부청구서</string>
+    <string name="seeDetail">\n  상세보기</string>
+    <string name="seeDetailBtn">상세보기</string>
+    <string name="pay">납부하기</string>
+    <string name="enterPw">    간편 비밀번호 입력</string>
+
+
+</resources>
