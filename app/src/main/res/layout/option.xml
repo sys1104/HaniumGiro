@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yssong.tabbedexample.MainActivity">
+
+    <TextView
+        android:id="@+id/option"
+        android:layout_width="382dp"
+        android:layout_height="79dp"
+        android:text="@string/option"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/push_service"
+        android:layout_width="112dp"
+        android:layout_height="27dp"
+        android:text="@string/push_service"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginTop="63dp"
+        app:layout_constraintTop_toBottomOf="@+id/bill_alarm" />
+
+    <TextView
+        android:id="@+id/bill_alarm"
+        android:layout_width="112dp"
+        android:layout_height="27dp"
+        android:text="@string/bill_alarm"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/option" />
+
+    <RadioGroup
+        android:layout_width="212dp"
+        android:layout_height="31dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/bill_alarm">
+
+        <RadioButton
+            android:id="@+id/silent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/silent"
+            tools:layout_editor_absoluteX="167dp"
+            tools:layout_editor_absoluteY="114dp" />
+
+        <RadioButton
+            android:id="@+id/vibration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/vibration"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="114dp" />
+
+        <RadioButton
+            android:id="@+id/sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sound"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="114dp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="106dp"
+        android:layout_height="29dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/push_service">
+
+        <RadioButton
+            android:id="@+id/push_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/push_on"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="204dp" />
+
+        <RadioButton
+            android:id="@+id/push_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/push_off"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="204dp" />
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>

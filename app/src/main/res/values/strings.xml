@@ -10,6 +10,31 @@
     <string name="seeDetailBtn">상세보기</string>
     <string name="pay">납부하기</string>
     <string name="enterPw">    간편 비밀번호 입력</string>
+    <string name="more_view">더보기</string>
+    <string name="account_register">계좌등록</string>
+    <string name="do_account_register">계좌등록하기</string>
+    <string name="option">옵션</string>
+    <string name="bill_alarm">고지서알림</string>
+    <string name="push_service">푸시서비스</string>
+    <string name="sound">소리</string>
+    <string name="vibration">진동</string>
+    <string name="silent">무음</string>
+    <string name="push_on">on</string>
+    <string name="push_off">off</string>
+    <string name="financial_institution">금융기관</string>
+    <string name="account_number">계좌번호</string>
+    <string name="add">추가하기</string>
+    <string name="register">등록하기</string>
+    <string name="choose_financial_institution">금융기관선택</string>
+    <string name="manage_name">관리명</string>
+    <string name="account_holder">계좌주</string>
+    <string name="account_password">계좌비밀번호</string>
+    <string name="register_complete">등록완료</string>
+    <string name="go_back">돌아가기</string>
+    <string name="date">날짜</string>
+    <string name="list">항목</string>
+    <string name="price">금액</string>
+    <string name="p_history">납부내역</string>
 
 
 </resources>
