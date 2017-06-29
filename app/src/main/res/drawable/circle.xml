@@ -4,11 +4,14 @@
 
     <item>
 
-        <shape android:shape="rectangle">
+        <shape android:shape="oval">
 
             <stroke android:width="1.5dp" android:color="@color/colorBlack" />
 
-            <solid android:color="@color/colorWhite" />
+            <solid android:color="@color/colorPrimary" />
+
+
+
 
         </shape>
 

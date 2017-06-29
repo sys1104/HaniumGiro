@@ -12,7 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
         </activity>
         <activity android:name=".AfterLogin"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
 
         </activity>
 
@@ -38,7 +38,38 @@
         <activity android:name=".register2"></activity>
         <activity android:name=".register_complete"></activity>
         <activity android:name=".pay_histroy"></activity>
-
+        <activity android:name=".Join"
+            android:label="@string/join"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".JoinPolicy"
+            android:label="@string/join"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".RegisterAuth"
+            android:label="@string/join"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".AuthPW"
+            android:label="@string/join"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".AuthPWOk"
+            android:label="@string/join"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".RegisterEasyPW"
+            android:label="@string/join"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".RegisterEasyPWAgain"
+            android:label="@string/join"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".EasyPWOk"
+            android:label="@string/join"
+            android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>

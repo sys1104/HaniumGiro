@@ -6,4 +6,5 @@
     <color name="colorTeal">#008080</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
+    <color name="lightGrey">#D3D3D3</color>
 </resources>

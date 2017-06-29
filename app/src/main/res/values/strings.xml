@@ -35,6 +35,23 @@
     <string name="list">항목</string>
     <string name="price">금액</string>
     <string name="p_history">납부내역</string>
-
+    <string name="autoLogin">자동로그인</string>
+    <string name="agree">동의함</string>
+    <string name="disagree">동의하지 않음</string>
+    <string name="policyAgreement">개인정보 활용 동의서</string>
+    <string name="next">다음</string>
+    <string name="id">아이디</string>
+    <string name="password">비밀번호 (숫자, 영문포함 8~12자리)</string>
+    <string name="passwordAgain">비밀번호 재입력</string>
+    <string name="name">이름</string>
+    <string name="birthYear">출생연도</string>
+    <string name="month">월</string>
+    <string name="day">일</string>
+    <string name="phone">휴대폰 (-빼고 입력)</string>
+    <string name="mailAddress">이메일주소</string>
+    <string name="registerAuth">공인인증서 등록</string>
+    <string name="idCheck">중복확인</string>
+    <string name="join">회원가입</string>
+    <string name="ok">확인</string>
 
 </resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="20"
+    >
+    <TextView
+        android:layout_marginTop="130dp"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\n 공인인증서 \n 등록 완료"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+    <Button
+        android:id="@+id/register_easyPW"
+        android:layout_marginTop="40dp"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="간편 비밀번호 등록하기"
+        />
+
+</LinearLayout>

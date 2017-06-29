@@ -7,25 +7,23 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by thddu on 2017-06-28.
+ * Created by thddu on 2017-06-29.
  */
 
-public class JoinPolicy extends AppCompatActivity {
+public class AuthPW extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.join_policy);
-
-        Button btnNext = (Button) findViewById(R.id.joinPolicy_btnNext);
+        setContentView(R.layout.join_authpw);
+        Button btnNext = (Button) findViewById(R.id.btnOK);
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재 화면의 제어권자
-                        Join.class); // 다음 넘어갈 클래스 지정
+                        AuthPWOk.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
     }
-
 }

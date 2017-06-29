@@ -26,13 +26,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        Button b = (Button) findViewById(R.id.button_Login);
-        b.setOnClickListener(new View.OnClickListener() {
+        Button login = (Button) findViewById(R.id.button_Login);
+        Button join = (Button) findViewById(R.id.button_Join);
+
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재 화면의 제어권자
                         AfterLogin.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
+            }
+        });
+        join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        JoinPolicy.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
