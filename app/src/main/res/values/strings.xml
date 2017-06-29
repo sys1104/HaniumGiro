@@ -35,6 +35,7 @@
     <string name="list">항목</string>
     <string name="price">금액</string>
     <string name="p_history">납부내역</string>
+    <string name="none">미정</string>
 
 
 </resources>
