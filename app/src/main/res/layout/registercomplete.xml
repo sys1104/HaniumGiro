@@ -24,34 +24,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.005"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <TextView
-            android:id="@+id/account_number"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/account_number"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/financial_institution"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/financial_institution"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.955"
+        android:layout_weight="0.4"
         android:orientation="horizontal">
     </LinearLayout>
 
@@ -59,13 +32,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="0.03">
+        android:layout_weight="0.01">
 
-        <Button
-            android:id="@+id/add"
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/add" />
+            android:text="@string/register_complete"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0.1">
+
+        <Button
+            android:id="@+id/go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="160dp"
+            android:text="@string/go_back" />
     </LinearLayout>
 
 </LinearLayout>
