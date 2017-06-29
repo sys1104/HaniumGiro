@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
  * Created by LimHJ on 2017-06-25.
  */
 
-public class option extends AppCompatActivity {
+public class Option extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

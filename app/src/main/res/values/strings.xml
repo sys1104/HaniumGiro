@@ -34,7 +34,7 @@
     <string name="date">날짜</string>
     <string name="list">항목</string>
     <string name="price">금액</string>
-    <string name="p_history">납부내역</string>
+
     <string name="autoLogin">자동로그인</string>
     <string name="agree">동의함</string>
     <string name="disagree">동의하지 않음</string>
@@ -53,5 +53,7 @@
     <string name="idCheck">중복확인</string>
     <string name="join">회원가입</string>
     <string name="ok">확인</string>
+    <string name="none">미정</string>
+
 
 </resources>

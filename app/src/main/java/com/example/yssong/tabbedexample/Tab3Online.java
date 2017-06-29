@@ -46,17 +46,17 @@ public class Tab3Online extends Fragment {
 
     }//endOnCreate
     public void register_account() {
-        Intent intent = new Intent(getActivity(), register.class);
+        Intent intent = new Intent(getActivity(), Register.class);
         startActivity(intent);
     }
 
     public void pay_history() {
-        Intent intent = new Intent(getActivity(), pay_histroy.class);
+        Intent intent = new Intent(getActivity(), PayHistory.class);
         startActivity(intent);
     }
 
     public void option() {
-        Intent intent = new Intent(getActivity(), option.class);
+        Intent intent = new Intent(getActivity(), Option.class);
         startActivity(intent);
     }
 }//endFragment
