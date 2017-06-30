@@ -58,9 +58,11 @@
 
         <Button
             android:id="@+id/go_back"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="160dp"
+            android:layout_marginRight="125dp"
+            android:layout_marginLeft="125dp"
+            android:layout_gravity="center"
             android:text="@string/go_back" />
     </LinearLayout>
 
