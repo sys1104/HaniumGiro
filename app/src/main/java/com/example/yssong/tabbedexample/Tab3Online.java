@@ -25,14 +25,6 @@ public class Tab3Online extends Fragment {
             }
         });
 
-        Button phisbtn = (Button)rootView.findViewById(R.id.pay_history);
-        phisbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pay_history();
-            }
-        });
-
         Button opbtn = (Button)rootView.findViewById(R.id.option);
         opbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,11 +39,6 @@ public class Tab3Online extends Fragment {
     }//endOnCreate
     public void register_account() {
         Intent intent = new Intent(getActivity(), Register.class);
-        startActivity(intent);
-    }
-
-    public void pay_history() {
-        Intent intent = new Intent(getActivity(), PayHistory.class);
         startActivity(intent);
     }
 
