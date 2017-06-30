@@ -39,7 +39,7 @@
 
         <activity android:name=".Register"></activity>
         <activity android:name=".Option"></activity>
-        <activity android:name=".register2"></activity>
+        <activity android:name=".RegisterDetail"></activity>
         <activity android:name=".RegisterComplete"></activity>
         <activity android:name=".PayHistory"></activity>
         <activity android:name=".Join"
