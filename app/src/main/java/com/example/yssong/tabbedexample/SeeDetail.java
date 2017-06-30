@@ -13,16 +13,20 @@ import android.widget.Button;
 public class SeeDetail extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.seedetail);
-        Button b =(Button)findViewById(R.id.button_Pay);
+        setContentView(R.layout.bill_chat);
+        Button b = (Button) findViewById(R.id.button_seeDetail);
+        Button home = (Button) findViewById(R.id.home);
+
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재 화면의 제어권자
-                        EnterPwd.class); // 다음 넘어갈 클래스 지정
+                        BillDetail.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
+
     }
 }
