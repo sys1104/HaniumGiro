@@ -52,8 +52,11 @@
         <activity android:name=".Option"></activity>
         <activity android:name=".RegisterDetail"></activity>
         <activity android:name=".RegisterComplete"></activity>
+<<<<<<< HEAD
         <activity android:name=".PayHistory"></activity>
 
+=======
+>>>>>>> 6ff1e01c5086de7130c1cab4fde99d75a2c29452
         <activity android:name=".Join"
             android:label="@string/join"
             android:theme="@style/AppTheme">
