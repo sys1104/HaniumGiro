@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yssong.tabbedexample">
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    
 
     <application
         android:allowBackup="true"
@@ -24,9 +27,17 @@
         <activity android:name=".SeeDetail"  android:label="GIRO">
 
         </activity>
-        <activity android:name=".BillDetail" android:label="상세보기" ></activity>
+        <activity android:name=".BillDetail" android:label="상세보기" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
         <activity android:name=".EnterPwd"  android:label="@string/app_name">
             <activity android:name=".SuccessPay"  ></activity>
+
+
 
 
 
@@ -42,6 +53,7 @@
         <activity android:name=".RegisterDetail"></activity>
         <activity android:name=".RegisterComplete"></activity>
         <activity android:name=".PayHistory"></activity>
+
         <activity android:name=".Join"
             android:label="@string/join"
             android:theme="@style/AppTheme">

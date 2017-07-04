@@ -20,32 +20,43 @@
 
 </LinearLayout>
 
-<LinearLayout
-android:layout_width="300dp"
-android:layout_height="wrap_content"
-    android:layout_gravity="center"
-android:background="@drawable/border"
-android:orientation="vertical"
-android:layout_weight="0"
-    >
-<TextView
-    android:id="@+id/textView01"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:text="\n\n      4월 전기요금은 \n     30,000원 입니다.\n "
-    android:textSize="20sp"
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+        android:background="@drawable/border"
+        android:orientation="vertical">
 
-    />
+        <TextView
+            android:id="@+id/textView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="\n\n      4월 전기요금은 \n     30,000원 입니다.\n "
+            android:textSize="20sp"
 
-<Button
-    android:id="@+id/button_seeDetail"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
-    android:layout_gravity="center"
-    android:text="@string/seeDetailBtn"
-    />
+            />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/button_seeDetail"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="@string/seeDetailBtn" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_star"
+        android:backgroundTint="@color/colorAccent"
+        android:text="HOME"
+        android:textSize="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop= "220dp"
+        android:textColor="@color/colorWhite"/>
+
+</LinearLayout>

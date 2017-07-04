@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:weightSum="1">
 
-    <Button
-        android:id="@+id/friend1"
+
+    <ListView
+        android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.08"
-        android:background="@drawable/border"
-        android:backgroundTint="@color/colorWhite"
-        android:text="친구목록이 들어갈 화면"
-        android:textSize="20sp" />
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:divider="#d1d1d1"
+        android:dividerHeight="2dp"
+        android:headerDividersEnabled="false"></ListView>
+
 </LinearLayout>
