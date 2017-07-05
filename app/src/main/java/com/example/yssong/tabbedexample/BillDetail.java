@@ -2,6 +2,7 @@ package com.example.yssong.tabbedexample;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -25,5 +26,6 @@ public class BillDetail extends AppCompatActivity{
                 startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
+
     }
 }

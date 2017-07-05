@@ -17,18 +17,6 @@ public class Tab2Chat extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab2chat, container, false);
-        Button b = (Button)rootView.findViewById(R.id.button_seeDetail);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               updateDetail();
-            }
-        }); //endOnClickListener
         return rootView;
-
-    }//endOnCreate
-    public void updateDetail() {
-        Intent intent = new Intent(getActivity(), SeeDetail.class);
-        startActivity(intent);
     }
-}//endFragment
+}
