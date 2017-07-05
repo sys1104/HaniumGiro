@@ -21,7 +21,8 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".SeeDetail"  android:label="GIRO">
+        <activity android:name=".SeeDetail"  android:label="GIRO"
+            android:theme="@style/AppTheme">
 
         </activity>
         <activity android:name=".BillDetail" android:label="상세보기" ></activity>
