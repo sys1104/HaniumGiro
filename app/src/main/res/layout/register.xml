@@ -28,15 +28,6 @@
         android:weightSum="2">
 
         <TextView
-            android:id="@+id/account_number"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/account_number"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-        <TextView
             android:id="@+id/financial_institution"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -45,13 +36,33 @@
             android:textAlignment="center"
             android:textSize="18sp" />
 
+
+        <TextView
+            android:id="@+id/account_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/account_number"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.955"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:id="@+id/jsonlistview"/>
+
     </LinearLayout>
 
     <LinearLayout
