@@ -96,32 +96,13 @@
         android:weightSum="3">
 
         <EditText
-            android:id="@+id/join_birthYear"
-            android:layout_width="wrap_content"
+            android:id="@+id/join_birthYearMonthDay"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/birthYear"
+            android:hint="@string/birthYearMonthDay"
             android:background="@drawable/border"
             android:layout_weight="1"/>
-        <Spinner
-            android:id="@+id/join_spinnerMonth"
-            android:background="@drawable/border"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginStart="5dp"
-            android:entries="@array/month"
-            >
-        </Spinner>
-        <Spinner
-            android:id="@+id/join_spinnerDay"
-            android:background="@drawable/border"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginStart="5dp"
-            android:entries="@array/day"
-            >
-        </Spinner>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -149,7 +130,7 @@
         android:layout_marginEnd="30dp"
         android:layout_weight="1">
         <EditText
-            android:id="@+id/join_mail"
+            android:id="@+id/join_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/border"
