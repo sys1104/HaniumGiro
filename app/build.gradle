@@ -42,4 +42,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile files('src/libs/httpclient-4.5.3.jar')
     compile files('src/libs/httpcore-4.4.6.jar')
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
 }
+apply plugin: 'com.google.gms.google-services'
