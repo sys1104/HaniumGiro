@@ -149,10 +149,10 @@ public class Register extends AppCompatActivity {
 
             for(int i=0;i<jsonArray.length();i++){
 
-                JSONObject item = jsonArray.getJSONObject(i);
+                JSONObject jobj = jsonArray.getJSONObject(i);
 
-                String fi = item.getString(TAG_fi);
-                String an = item.getString(TAG_an);
+                String fi = jobj.getString(TAG_fi);
+                String an = jobj.getString(TAG_an);
 
                 HashMap<String,String> hashMap = new HashMap<>();
 
