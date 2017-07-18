@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseInstanceId.getInstance().getToken();
 
         String token = FirebaseInstanceId.getInstance().getToken();
-        Log.d("FCM_Token", token);
+//        Log.d("FCM_Token", token);
 
         Button login = (Button) findViewById(R.id.button_Login);
         Button join = (Button) findViewById(R.id.button_Join);
