@@ -33,7 +33,7 @@ import java.util.ArrayList;
 public class Join extends AppCompatActivity {
     loadJsp task;
     EditText join_id,join_pw,join_pwAgain,join_name,join_phoneNum,join_email,
-            join_birthYearMonthDay;
+            join_birthYearMonthDay,join_address;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.join);
@@ -45,7 +45,7 @@ public class Join extends AppCompatActivity {
         join_birthYearMonthDay=(EditText) findViewById(R.id.join_birthYearMonthDay);
         join_phoneNum=(EditText) findViewById(R.id.join_phoneNum);
         join_email=(EditText) findViewById(R.id.join_email);
-
+        join_address=(EditText) findViewById(R.id.join_address);
         Button btnNext = (Button) findViewById(R.id.btnOK);
 
         btnNext.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +71,7 @@ public class Join extends AppCompatActivity {
         final String birthYearMonthDay = join_birthYearMonthDay.getText().toString();
         final String phoneNum = join_phoneNum.getText().toString();
         final String email = join_email.getText().toString();
-
+        final String address = join_address.getText().toString();
 
 
         @Override
@@ -98,6 +98,8 @@ public class Join extends AppCompatActivity {
                 params.add(new BasicNameValuePair("birthYearMonthDay", birthYearMonthDay));
                 params.add(new BasicNameValuePair("phoneNum", phoneNum));
                 params.add(new BasicNameValuePair("email", email));
+                params.add(new BasicNameValuePair("address", address));
+
 
                 UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);
                 post.setEntity(ent);
