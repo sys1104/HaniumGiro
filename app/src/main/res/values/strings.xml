@@ -55,6 +55,7 @@
     <string name="ok">확인</string>
     <string name="none">미정</string>
     <string name="address">주소</string>
+    <string name="qrCode">QR 코드</string>
 
 
 </resources>
