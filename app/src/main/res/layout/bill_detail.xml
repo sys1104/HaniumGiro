@@ -16,6 +16,7 @@
         >
 
         <TextView
+            android:id="@+id/detailView01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -34,7 +35,7 @@
         android:layout_weight="0"
         >
         <TextView
-            android:id="@+id/textView01"
+            android:id="@+id/detailView02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

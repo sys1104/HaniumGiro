@@ -49,7 +49,9 @@ public class Tab1Contacts  extends Fragment {
     String[] type = new String[100];
     String[] bPrice = new String[100];
     String[] bYM = new String[100];
-
+    String[] bDue = new String[100];
+    String[] CAccount = new String[100];
+    String[] CGiroid = new String[100];
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -70,6 +72,9 @@ public class Tab1Contacts  extends Fragment {
                 intent.putExtra("b_type",type[position]);
                 intent.putExtra("price",bPrice[position]);
                 intent.putExtra("year_month",bYM[position]);
+                intent.putExtra("due",bDue[position]);
+                intent.putExtra("c_account",CAccount[position]);
+                intent.putExtra("c_giroid",CGiroid[position]);
                 startActivity(intent);
                 //position 값으로 몇번째 목록이 넘어온건지 정의 해주어야하는데
                 //아직 해결하지못함.
@@ -183,6 +188,10 @@ public class Tab1Contacts  extends Fragment {
                 type[i] = fi;
                 bPrice[i] = item.getString("price");
                 bYM[i] = item.getString("year_month");
+                bDue[i] = item.getString("due");
+                CAccount[i] = item.getString("c_account");
+                CGiroid[i] = item.getString("c_giroid");
+
 
             }
 
