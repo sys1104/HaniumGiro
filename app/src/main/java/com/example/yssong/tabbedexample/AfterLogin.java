@@ -109,7 +109,7 @@ public class AfterLogin extends AppCompatActivity {
                 case 0:
                     return "친구";
                 case 1:
-                    return "대화";
+                    return "납부내역";
                 case 2:
                     return "더보기";
             }

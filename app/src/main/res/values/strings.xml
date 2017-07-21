@@ -55,6 +55,6 @@
     <string name="ok">확인</string>
     <string name="none">미정</string>
     <string name="address">주소</string>
-
+    <string name="payHistory">납부내역</string>
 
 </resources>
