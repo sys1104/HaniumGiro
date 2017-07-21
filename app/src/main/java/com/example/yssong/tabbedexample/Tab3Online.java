@@ -1,12 +1,22 @@
 package com.example.yssong.tabbedexample;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
+import static android.widget.Toast.LENGTH_LONG;
 
 /**
  * Created by YSSONG on 2017-04-16.
@@ -24,12 +34,18 @@ public class Tab3Online extends Fragment {
                 register_account();
             }
         });
-
+        Button qrbtn = (Button)rootView.findViewById(R.id.qrCode);
         Button opbtn = (Button)rootView.findViewById(R.id.option);
         opbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 option();
+            }
+        }); //endOnClickListener
+        qrbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                qrCode();
             }
         }); //endOnClickListener
         return rootView;
@@ -46,4 +62,35 @@ public class Tab3Online extends Fragment {
         Intent intent = new Intent(getActivity(), Option.class);
         startActivity(intent);
     }
+    public void qrCode() {
+        new IntentIntegrator(getActivity()).initiateScan();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+
+        if(requestCode == 0) {
+
+            if(resultCode == Activity.RESULT_OK)
+            {
+                String contents = data.getStringExtra("SCAN_RESULT");
+                //위의 contents 값에 scan result가 들어온다.
+
+                Toast toast = Toast.makeText(getContext(), contents, LENGTH_LONG);
+                toast.show();
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(contents));
+                startActivity(intent);
+            }
+            else if(resultCode == Activity.RESULT_CANCELED)
+            {
+                Toast toast = Toast.makeText(getContext(), "error", LENGTH_LONG);
+                toast.show();
+            }
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
 }//endFragment

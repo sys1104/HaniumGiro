@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -45,7 +46,12 @@ public class Tab1Contacts  extends Fragment {
     ArrayList<HashMap<String, String>> mArrayList;
     ListView mlistView;
     String mJsonString;
-
+    String[] type = new String[100];
+    String[] bPrice = new String[100];
+    String[] bYM = new String[100];
+    String[] bDue = new String[100];
+    String[] CAccount = new String[100];
+    String[] CGiroid = new String[100];
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -58,6 +64,22 @@ public class Tab1Contacts  extends Fragment {
 
         Tab1Contacts.GetData task = new Tab1Contacts.GetData();
         task.execute("http://211.253.26.217:1024/BillInfo.jsp");
+
+        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), SeeDetail.class);
+                intent.putExtra("b_type",type[position]);
+                intent.putExtra("price",bPrice[position]);
+                intent.putExtra("year_month",bYM[position]);
+                intent.putExtra("due",bDue[position]);
+                intent.putExtra("c_account",CAccount[position]);
+                intent.putExtra("c_giroid",CGiroid[position]);
+                startActivity(intent);
+                //position 값으로 몇번째 목록이 넘어온건지 정의 해주어야하는데
+                //아직 해결하지못함.
+            }
+        });
 
 
         return rootView;
@@ -161,8 +183,16 @@ public class Tab1Contacts  extends Fragment {
                 HashMap<String,String> hashMap = new HashMap<>();
 
                 hashMap.put(TAG_fi, fi);
-
                 mArrayList.add(hashMap);
+
+                type[i] = fi;
+                bPrice[i] = item.getString("price");
+                bYM[i] = item.getString("year_month");
+                bDue[i] = item.getString("due");
+                CAccount[i] = item.getString("c_account");
+                CGiroid[i] = item.getString("c_giroid");
+
+
             }
 
             ListAdapter adapter = new SimpleAdapter(

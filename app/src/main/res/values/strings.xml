@@ -56,5 +56,7 @@
     <string name="none">미정</string>
     <string name="address">주소</string>
     <string name="payHistory">납부내역</string>
+    <string name="qrCode">QR 코드</string>
+
 
 </resources>
