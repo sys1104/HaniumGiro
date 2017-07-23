@@ -1,12 +1,10 @@
 package com.example.yssong.tabbedexample;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 /**
  * Created by JIHYUN2 on 2017-06-08.
@@ -33,7 +31,7 @@ public class EnterPwd extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재 화면의 제어권자
-                        SeeDetail.class); // 다음 넘어갈 클래스 지정
+                        Bill_Chat.class); // 다음 넘어갈 클래스 지정
                 intent.putExtra("b_type",b_type);
                 intent.putExtra("price",price);
                 intent.putExtra("year_month",year_month);

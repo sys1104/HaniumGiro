@@ -12,6 +12,7 @@
 
     <TextView
         android:id="@+id/textView01"
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -31,6 +32,7 @@
 
         <TextView
             android:id="@+id/textView02"
+            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -41,7 +43,8 @@
 
         <Button
             android:id="@+id/button_seeDetail"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -53,16 +56,5 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/home"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_star"
-        android:backgroundTint="@color/colorAccent"
-        android:text="HOME"
-        android:textSize="10dp"
-        android:layout_gravity="center"
-        android:layout_marginTop= "220dp"
-        android:textColor="@color/colorWhite"/>
 
 </LinearLayout>

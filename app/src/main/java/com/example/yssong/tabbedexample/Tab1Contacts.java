@@ -1,9 +1,7 @@
 package com.example.yssong.tabbedexample;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -27,7 +24,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by JIHYUN2 on 2017-07-03.
@@ -68,7 +64,7 @@ public class Tab1Contacts  extends Fragment {
         mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), SeeDetail.class);
+                Intent intent = new Intent(getActivity(), Bill_Chat.class);
                 intent.putExtra("b_type",type[position]);
                 intent.putExtra("price",bPrice[position]);
                 intent.putExtra("year_month",bYM[position]);
