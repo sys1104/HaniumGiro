@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="공인인증서 1"
-            android:background="@color/lightGrey"
+            android:textSize="20sp"
             />
     </LinearLayout>
 </LinearLayout>

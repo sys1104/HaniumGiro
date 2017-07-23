@@ -59,9 +59,12 @@
         >
         <Button
             android:id="@+id/joinPolicy_btnNext"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:text="@string/next"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorWhite"
             android:textSize="20sp"
             >
 

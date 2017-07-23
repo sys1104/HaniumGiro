@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="\n\n      상세항목은 다음과 같습니다."
+            android:text="\n\n    상세항목은 다음과 같습니다."
             android:textSize="20sp"
 
             />
@@ -47,11 +47,15 @@
 
         <Button
             android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
             android:id="@+id/button_Pay"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:text="@string/pay"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
             />
     </LinearLayout>
 

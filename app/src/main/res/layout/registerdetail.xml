@@ -137,6 +137,9 @@
             android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
             android:text="@string/register" />
     </LinearLayout>
 

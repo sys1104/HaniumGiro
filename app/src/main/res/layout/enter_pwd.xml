@@ -31,6 +31,9 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:text="@string/ok"/>
+            android:text="@string/ok"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"/>
     </LinearLayout>
 </LinearLayout>

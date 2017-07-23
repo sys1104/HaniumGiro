@@ -25,29 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.005"
         android:orientation="horizontal"
-        android:weightSum="2">
-
-        <TextView
-            android:id="@+id/financial_institution"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/financial_institution"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-
-        <TextView
-            android:id="@+id/account_number"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/account_number"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-
-
+        android:weightSum="2"
+        android:layout_marginTop="10dp">
     </LinearLayout>
 
     <LinearLayout
@@ -75,7 +54,10 @@
             android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/add" />
+            android:background="@color/colorPrimary"
+            android:text="@string/add"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 </LinearLayout>
