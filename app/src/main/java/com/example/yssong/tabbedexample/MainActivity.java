@@ -2,16 +2,18 @@ package com.example.yssong.tabbedexample;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
-import com.google.firebase.iid.FirebaseInstanceId;
-import android.os.AsyncTask;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.tsengvn.typekit.TypekitContextWrapper;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,7 +22,6 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import com.tsengvn.typekit.TypekitContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,15 +33,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
         FirebaseInstanceId.getInstance().getToken();
 
-        String token = FirebaseInstanceId.getInstance().getToken();
         userId = (EditText) findViewById(R.id.editText2);
         userPwd = (EditText) findViewById(R.id.editText3);
 
 
         login = (Button) findViewById(R.id.button_Login);
         join = (Button) findViewById(R.id.button_Join);
+
+        /** 토큰값 출력해보기 **/
+        /*Toast toast = Toast.makeText(this, FirebaseInstanceId.getInstance().getToken(),
+         Toast.LENGTH_SHORT);
+        toast.show();*/
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
