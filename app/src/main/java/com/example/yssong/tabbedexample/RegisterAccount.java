@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -49,10 +50,16 @@ public class RegisterDetail extends AppCompatActivity {
         regibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent completeIntent = new Intent(RegisterDetail.this, RegisterComplete.class);
-                RegisterDetail.this.startActivity(completeIntent);
-                task = new loadJsp();
-                task.execute();
+                if(f_institution.getText().toString().length()!=0) {
+                    Intent completeIntent = new Intent(RegisterDetail.this, RegisterComplete.class);
+                    RegisterDetail.this.startActivity(completeIntent);
+                    task = new loadJsp();
+                    task.execute();
+                }
+                else
+                {
+                    Toast.makeText(RegisterDetail.this, "모든 항목을 입력하세요.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -70,43 +77,47 @@ public class RegisterDetail extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... param) {
             // TODO Auto-generated method stub
-
-            try {
-                HttpClient client = new DefaultHttpClient();
+            if(test1.length() != 0) {
 
 
-                // jsp 주소
-                String postURL = "http://211.253.26.217:1024/insert.jsp";
+                try {
+                    HttpClient client = new DefaultHttpClient();
 
 
-                HttpPost post = new HttpPost(postURL);
-                ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-
-                //파
-
-                params.add(new BasicNameValuePair("fi", test1));
-                params.add(new BasicNameValuePair("mn", test2));
-                params.add(new BasicNameValuePair("an", test3));
-                params.add(new BasicNameValuePair("ah", test4));
-                params.add(new BasicNameValuePair("ap", test5));
+                    // jsp 주소
+                    String postURL = "http://211.253.26.217:1024/insert.jsp";
 
 
-                UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);
-                post.setEntity(ent);
+                    HttpPost post = new HttpPost(postURL);
+                    ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 
-                HttpResponse responsePOST = client.execute(post);
-                HttpEntity resEntity = responsePOST.getEntity();
-                if (resEntity != null) {
-                    Log.i("RESPONSE", EntityUtils.toString(resEntity));
+                    //파
+
+                    params.add(new BasicNameValuePair("fi", test1));
+                    params.add(new BasicNameValuePair("mn", test2));
+                    params.add(new BasicNameValuePair("an", test3));
+                    params.add(new BasicNameValuePair("ah", test4));
+                    params.add(new BasicNameValuePair("ap", test5));
+
+
+                    UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);
+                    post.setEntity(ent);
+
+                    HttpResponse responsePOST = client.execute(post);
+                    HttpEntity resEntity = responsePOST.getEntity();
+                    if (resEntity != null) {
+                        Log.i("RESPONSE", EntityUtils.toString(resEntity));
+                    }
+
+                }//endTry
+                catch (IOException e) {
+                    e.printStackTrace();
                 }
-
-            } catch (IOException e) {
-                e.printStackTrace();
             }
-            return null;
+                return null;
 
 
-        }
+        } //end doInBackground
 
-    }
+    } //endLoadJsp
 }

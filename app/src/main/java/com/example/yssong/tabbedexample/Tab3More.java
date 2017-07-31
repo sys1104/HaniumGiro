@@ -1,8 +1,6 @@
 package com.example.yssong.tabbedexample;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,7 +12,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 import static android.widget.Toast.LENGTH_LONG;
 
@@ -22,11 +19,11 @@ import static android.widget.Toast.LENGTH_LONG;
  * Created by YSSONG on 2017-04-16.
  */
 
-public class Tab3Online extends Fragment {
+public class Tab3More extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab3online, container, false);
+        View rootView = inflater.inflate(R.layout.tab3_more, container, false);
         Button regisbtn = (Button)rootView.findViewById(R.id.register_account);
         regisbtn.setOnClickListener(new View.OnClickListener() {
             @Override
