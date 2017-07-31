@@ -24,7 +24,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Register extends AppCompatActivity {
+public class AccountList extends AppCompatActivity {
 
     private static String TAG = "jsontest";
 
@@ -39,7 +39,7 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.account_list);
 
         mlistView = (ListView) findViewById(R.id.jsonlistview);
         mArrayList = new ArrayList<>();
@@ -52,8 +52,8 @@ public class Register extends AppCompatActivity {
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(Register.this, RegisterDetail.class);
-                Register.this.startActivity(registerIntent);
+                Intent registerIntent = new Intent(AccountList.this, RegisterAccount.class);
+                AccountList.this.startActivity(registerIntent);
             }
         });
     }
@@ -66,7 +66,7 @@ public class Register extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            progressDialog = ProgressDialog.show(Register.this,
+            progressDialog = ProgressDialog.show(AccountList.this,
                     "Please Wait", null, true, true);
         }
 
@@ -163,7 +163,7 @@ public class Register extends AppCompatActivity {
             }
 
             ListAdapter adapter = new SimpleAdapter(
-                    Register.this, mArrayList, R.layout.registerlist,
+                    AccountList.this, mArrayList, R.layout.registerlist,
                     new String[]{TAG_fi,TAG_an},
                     new int[]{R.id.financial_institution, R.id.account_number}
             );

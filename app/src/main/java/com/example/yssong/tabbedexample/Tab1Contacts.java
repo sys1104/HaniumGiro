@@ -64,7 +64,7 @@ public class Tab1Contacts  extends Fragment {
         mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), Bill_Chat.class);
+                Intent intent = new Intent(getActivity(), BillView.class);
                 intent.putExtra("b_type",type[position]);
                 intent.putExtra("price",bPrice[position]);
                 intent.putExtra("year_month",bYM[position]);

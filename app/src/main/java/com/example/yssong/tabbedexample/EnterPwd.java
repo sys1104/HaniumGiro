@@ -31,7 +31,7 @@ public class EnterPwd extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재 화면의 제어권자
-                        Bill_Chat.class); // 다음 넘어갈 클래스 지정
+                        BillView.class); // 다음 넘어갈 클래스 지정
                 intent.putExtra("b_type",b_type);
                 intent.putExtra("price",price);
                 intent.putExtra("year_month",year_month);

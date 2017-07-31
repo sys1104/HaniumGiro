@@ -1,6 +1,5 @@
 package com.example.yssong.tabbedexample;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,14 +11,14 @@ import android.widget.TextView;
  * Created by YSSONG on 2017-06-07.
  */
 
-public class Bill_Chat extends AppCompatActivity {
+public class BillView extends AppCompatActivity {
 
     TextView textView1;
     TextView textView2;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bill_chat);
+        setContentView(R.layout.bill_view);
         Button b = (Button) findViewById(R.id.button_seeDetail);
 //        Button home = (Button) findViewById(R.id.home);
 

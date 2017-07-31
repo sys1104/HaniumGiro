@@ -51,7 +51,7 @@ public class Tab3More extends Fragment {
 
     }//endOnCreate
     public void register_account() {
-        Intent intent = new Intent(getActivity(), Register.class);
+        Intent intent = new Intent(getActivity(), AccountList.class);
         startActivity(intent);
     }
 

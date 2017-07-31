@@ -29,7 +29,7 @@ import java.util.ArrayList;
  * Created by LimHJ on 2017-06-25.
  */
 
-public class RegisterDetail extends AppCompatActivity {
+public class RegisterAccount extends AppCompatActivity {
 
     EditText f_institution, m_name, a_num, a_holder, a_pw;
 
@@ -38,7 +38,7 @@ public class RegisterDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registerdetail);
+        setContentView(R.layout.register_account);
 
         f_institution = (EditText) findViewById(R.id.choose_financial_institution);
         m_name = (EditText) findViewById(R.id.manage_name);
@@ -51,14 +51,14 @@ public class RegisterDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(f_institution.getText().toString().length()!=0) {
-                    Intent completeIntent = new Intent(RegisterDetail.this, RegisterComplete.class);
-                    RegisterDetail.this.startActivity(completeIntent);
+                    Intent completeIntent = new Intent(RegisterAccount.this, RegisterAccountOK.class);
+                    RegisterAccount.this.startActivity(completeIntent);
                     task = new loadJsp();
                     task.execute();
                 }
                 else
                 {
-                    Toast.makeText(RegisterDetail.this, "모든 항목을 입력하세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterAccount.this, "모든 항목을 입력하세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

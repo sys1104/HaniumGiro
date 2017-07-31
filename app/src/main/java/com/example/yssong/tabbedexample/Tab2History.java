@@ -28,7 +28,7 @@ import java.util.HashMap;
  * Created by YSSONG on 2017-04-16.
  */
 
-public class Tab2Chat extends Fragment {
+public class Tab2History extends Fragment {
 
     private static String TAG = "jsontest";
 
@@ -43,7 +43,7 @@ public class Tab2Chat extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab2chat, container, false);
+        View rootView = inflater.inflate(R.layout.tab2_histroy, container, false);
 
         mlistView = (ListView) rootView.findViewById(R.id.jsonlistview2);
         mArrayList = new ArrayList<>();
@@ -160,7 +160,7 @@ public class Tab2Chat extends Fragment {
             }
 
             ListAdapter adapter = new SimpleAdapter(
-                    getActivity(), mArrayList, R.layout.tab2chatlist,
+                    getActivity(), mArrayList, R.layout.tab2_history_list,
                     new String[]{TAG_price,TAG_item,TAG_date},
                     new int[]{R.id.price_l, R.id.item_l, R.id.date_l}
             );

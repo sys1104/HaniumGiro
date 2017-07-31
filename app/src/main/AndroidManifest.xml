@@ -28,7 +28,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".Bill_Chat"  android:label="@string/app_name"
+        <activity android:name=".BillView"  android:label="@string/app_name"
             android:theme="@style/AppTheme">
 
         </activity>
@@ -53,10 +53,10 @@
 
         </activity>
 
-        <activity android:name=".Register"></activity>
+        <activity android:name=".AccountList"></activity>
         <activity android:name=".Option"></activity>
-        <activity android:name=".RegisterDetail"></activity>
-        <activity android:name=".RegisterComplete"></activity>
+        <activity android:name=".RegisterAccount"></activity>
+        <activity android:name=".RegisterAccountOK"></activity>
 
         <activity android:name=".Join"
             android:label="@string/join"

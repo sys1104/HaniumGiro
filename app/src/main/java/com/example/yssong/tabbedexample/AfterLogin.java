@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -87,10 +86,10 @@ public class AfterLogin extends AppCompatActivity {
                     Tab1Contacts tab1 = new Tab1Contacts();
                     return tab1;
                 case 1 :
-                    Tab2Chat tab2 = new Tab2Chat();
+                    Tab2History tab2 = new Tab2History();
                     return tab2;
                 case 2 :
-                    Tab3Online tab3 = new Tab3Online();
+                    Tab3More tab3 = new Tab3More();
                     return tab3;
                 default:
                     return null;
