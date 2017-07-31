@@ -53,27 +53,31 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 loginid = userId.getText().toString();
                 loginpwd = userPwd.getText().toString();
-
-                try {
-                    String result  = new CustomTask().execute(loginid,loginpwd).get();
-                    Log.i("로그값",result);
-                    if(result.equals(" true")) {
-                        Toast.makeText(MainActivity.this,"로그인",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, AfterLogin.class);
-                        startActivity(intent);
-                        finish();
-                    } else if(result.equals(" false")) {
-                        Toast.makeText(MainActivity.this,"비밀번호가 틀렸습니다",Toast.LENGTH_SHORT).show();
-                        userId.setText("");
-                        userPwd.setText("");
-                    } else if(result.equals(" noid")) {
-                        Toast.makeText(MainActivity.this,"존재하지 않는 아이디입니다",Toast.LENGTH_SHORT).show();
-                        userId.setText("");
-                        userPwd.setText("");
+                if (loginid.equals("") && loginpwd.equals("")) {
+                    Toast.makeText(MainActivity.this, "아이디와 비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
+                } else {
+                    try {
+                        String result = new CustomTask().execute(loginid, loginpwd).get();
+                        Log.i("로그값", result);
+                        if (result.equals(" true")) {
+                            Toast.makeText(MainActivity.this, "로그인", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, AfterLogin.class);
+                            startActivity(intent);
+                            finish();
+                        } else if (result.equals(" false")) {
+                            Toast.makeText(MainActivity.this, "비밀번호가 틀렸습니다", Toast.LENGTH_SHORT).show();
+                            userId.setText("");
+                            userPwd.setText("");
+                        } else if (result.equals(" noid")) {
+                            Toast.makeText(MainActivity.this, "존재하지 않는 아이디입니다", Toast.LENGTH_SHORT).show();
+                            userId.setText("");
+                            userPwd.setText("");
+                        }
+                    } catch (Exception e) {
                     }
-                }catch (Exception e) {}
 
 
+                }
             }
 
         });

@@ -46,19 +46,22 @@ public class RegisterAccount extends AppCompatActivity {
         a_holder = (EditText) findViewById(R.id.accountholder);
         a_pw = (EditText) findViewById(R.id.accountpassword);
 
+
         Button regibtn = (Button) findViewById(R.id.register);
         regibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(f_institution.getText().toString().length()!=0) {
+                if(f_institution.getText().toString().equals("")||m_name.getText().toString().equals("")||
+                        a_num.getText().toString().equals("")||a_holder.getText().toString().equals("")||
+                        a_pw.getText().toString().equals("")) {
+                    Toast.makeText(RegisterAccount.this, "모든 항목을 입력하세요.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
                     Intent completeIntent = new Intent(RegisterAccount.this, RegisterAccountOK.class);
                     RegisterAccount.this.startActivity(completeIntent);
                     task = new loadJsp();
                     task.execute();
-                }
-                else
-                {
-                    Toast.makeText(RegisterAccount.this, "모든 항목을 입력하세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -77,7 +80,6 @@ public class RegisterAccount extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... param) {
             // TODO Auto-generated method stub
-            if(test1.length() != 0) {
 
 
                 try {
@@ -113,7 +115,7 @@ public class RegisterAccount extends AppCompatActivity {
                 catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
+
                 return null;
 
 

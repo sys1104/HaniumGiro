@@ -28,8 +28,8 @@ public class AccountList extends AppCompatActivity {
 
     private static String TAG = "jsontest";
 
-    private static final String TAG_fi = "fi";
-    private static final String TAG_an = "an";
+    private static final String TAG_bank = "bank";
+    private static final String TAG_account_number = "account_number";
 
     ArrayList<HashMap<String, String>> mArrayList;
     ListView mlistView;
@@ -151,20 +151,20 @@ public class AccountList extends AppCompatActivity {
 
                 JSONObject jobj = jsonArray.getJSONObject(i);
 
-                String fi = jobj.getString(TAG_fi);
-                String an = jobj.getString(TAG_an);
+                String bank = jobj.getString(TAG_bank);
+                String account_number = jobj.getString(TAG_account_number);
 
                 HashMap<String,String> hashMap = new HashMap<>();
 
-                hashMap.put(TAG_fi, fi);
-                hashMap.put(TAG_an, an);
+                hashMap.put(TAG_bank, bank);
+                hashMap.put(TAG_account_number, account_number);
 
                 mArrayList.add(hashMap);
             }
 
             ListAdapter adapter = new SimpleAdapter(
                     AccountList.this, mArrayList, R.layout.registerlist,
-                    new String[]{TAG_fi,TAG_an},
+                    new String[]{TAG_bank, TAG_account_number},
                     new int[]{R.id.financial_institution, R.id.account_number}
             );
 
