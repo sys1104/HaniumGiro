@@ -34,7 +34,7 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService{
                 .build();
 
         Request request = new Request.Builder()
-                .url("http://211.253.26.217:1024/register.jsp")    // 페이지 경로를 입력
+                .url("http://211.253.26.217:1024/FCMTokenRegister.jsp")    // 페이지 경로를 입력
                 .post(body)
                 .build();
 

@@ -34,6 +34,8 @@ public class RegisterAccount extends AppCompatActivity {
     EditText f_institution, m_name, a_num, a_holder, a_pw;
 
     loadJsp task;
+    MainActivity temp = new MainActivity();
+    String ID = temp.u_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +102,7 @@ public class RegisterAccount extends AppCompatActivity {
                     params.add(new BasicNameValuePair("an", test3));
                     params.add(new BasicNameValuePair("ah", test4));
                     params.add(new BasicNameValuePair("ap", test5));
+                    params.add(new BasicNameValuePair("id", ID));
 
 
                     UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);

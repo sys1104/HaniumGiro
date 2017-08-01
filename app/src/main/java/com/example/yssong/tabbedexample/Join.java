@@ -62,7 +62,7 @@ public class Join extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent completeIntent = new Intent(getApplicationContext(), RegisterAuth.class);
+                    Intent completeIntent = new Intent(Join.this, RegisterAuth.class);
                     Join.this.startActivity(completeIntent);
                     task = new loadJsp();
                     task.execute();
