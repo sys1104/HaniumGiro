@@ -58,6 +58,12 @@
     <string name="address">주소</string>
     <string name="payHistory">납부내역</string>
     <string name="qrCode">QR 코드</string>
-
+    <string name="personalDataAgreement">- 수집 이용목적 : 지로서비스 제공\n
+- 수집항목\n
+ 1. 회원가입 : (필수정보) ID, 비밀번호, 성명, 생년월일, 전화번호, 이메일주소, 휴대폰번호\n
+ 2. 지로업무처리 : (필수정보) 거래금융회사(카드사)명, 주민등록번호(고유식별정보), 계좌(카드)번호, 예금(카드소유)주명, IP주소\n
+- 보유 및 파기 : 이용자의 별도 해지요청이 있을때까지\n
+* 이용자는 개인정보 수집 및 이용을 거부할 권리가 있으며, 서비스 제공에 필요한 최소한의 개인정보 수집 및 이용에 동의하지 않을 경우 이용에 제한을 받을 수 있습니다. 
+    </string>
 
 </resources>
