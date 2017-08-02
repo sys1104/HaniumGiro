@@ -11,6 +11,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +31,7 @@ public class AccountList extends AppCompatActivity {
 
     private static String TAG = "jsontest";
 
-    private static final String TAG_bank = "bank";
+    private static final String TAG_bank_name = "bank_name";
     private static final String TAG_account_number = "account_number";
 
     ArrayList<HashMap<String, String>> mArrayList;
@@ -47,6 +48,7 @@ public class AccountList extends AppCompatActivity {
         mArrayList = new ArrayList<>();
         MainActivity temp = new MainActivity();
         String ID = temp.u_id;
+
 
         /*GetData task = new GetData();
         task.execute("http://211.253.26.217:1024/json.jsp");*/
@@ -170,7 +172,7 @@ public class AccountList extends AppCompatActivity {
                 osw.write(sendMsg);
                 osw.flush();
                 if(conn.getResponseCode() == conn.HTTP_OK) {
-                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "EUC-KR");
+                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
                     BufferedReader reader = new BufferedReader(tmp);
                     StringBuffer buffer = new StringBuffer();
                     while ((str = reader.readLine()) != null) {
@@ -200,12 +202,12 @@ public class AccountList extends AppCompatActivity {
 
                 JSONObject jobj = jsonArray.getJSONObject(i);
 
-                String bank = jobj.getString(TAG_bank);
+                String bank_name = jobj.getString(TAG_bank_name);
                 String account_number = jobj.getString(TAG_account_number);
 
                 HashMap<String,String> hashMap = new HashMap<>();
 
-                hashMap.put(TAG_bank, bank);
+                hashMap.put(TAG_bank_name, bank_name);
                 hashMap.put(TAG_account_number, account_number);
 
                 mArrayList.add(hashMap);
@@ -213,7 +215,7 @@ public class AccountList extends AppCompatActivity {
 
             ListAdapter adapter = new SimpleAdapter(
                     AccountList.this, mArrayList, R.layout.registerlist,
-                    new String[]{TAG_bank, TAG_account_number},
+                    new String[]{TAG_bank_name, TAG_account_number},
                     new int[]{R.id.financial_institution, R.id.account_number}
             );
 
