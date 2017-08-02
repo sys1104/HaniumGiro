@@ -16,7 +16,7 @@
     <string name="do_account_register">계좌등록하기</string>
     <string name="option">옵션</string>
     <string name="bill_alarm">고지서알림</string>
-    <string name="push_service">푸시서비스</string>
+    <string name="push_message">푸시메시지</string>
     <string name="sound">소리</string>
     <string name="vibration">진동</string>
     <string name="silent">무음</string>

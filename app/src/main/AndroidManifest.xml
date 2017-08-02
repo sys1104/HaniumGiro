@@ -54,7 +54,11 @@
         </activity>
 
         <activity android:name=".AccountList"></activity>
-        <activity android:name=".Option"></activity>
+        <activity android:name=".Option"
+            android:label="@string/option"
+            >
+
+        </activity>
         <activity android:name=".RegisterAccount"></activity>
         <activity android:name=".RegisterAccountOK"></activity>
 

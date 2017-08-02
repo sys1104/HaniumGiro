@@ -5,112 +5,36 @@
     android:layout_height="match_parent"
     android:weightSum="10">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/option"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/option"
-            android:textAlignment="center"
-            android:textSize="30sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/bill_alarm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/bill_alarm"
-                android:textAlignment="center"
-                android:textSize="20sp"/>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/silent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/silent"/>
-
-                <RadioButton
-                    android:id="@+id/vibration"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/vibration"/>
-
-                <RadioButton
-                    android:id="@+id/sound"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/sound"/>
-
-            </RadioGroup>
-        </LinearLayout>
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
 
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/push_service"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/push_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/push_message"
                 android:textAlignment="center"
-                android:textSize="20sp"/>
+                android:layout_marginStart="20dp"
+                android:textSize="30sp" />
 
-            <RadioGroup
+
+            <Switch
+                android:id="@+id/push_switch"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
 
-                <RadioButton
-                    android:id="@+id/push_on"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/push_on"
-                    android:layout_weight="1"/>
+                />
 
-                <RadioButton
-                    android:id="@+id/push_off"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/push_off"
-                    android:layout_weight="1"/>
-            </RadioGroup>
-        </LinearLayout>
 
     </LinearLayout>
 

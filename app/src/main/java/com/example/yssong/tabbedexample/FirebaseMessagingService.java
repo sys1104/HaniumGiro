@@ -4,6 +4,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
@@ -14,10 +15,17 @@ import com.google.firebase.messaging.RemoteMessage;
 
 public class FirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService{
     private static final String TAG = "FirebaseMsgService";
+    boolean pushSw;
+    public void getData()
+    {
+        SharedPreferences pushSwitch = getSharedPreferences("pushSwitch", MODE_PRIVATE);
+        pushSw=pushSwitch.getBoolean("pushSwitch",true);
+    }
 
 
-    @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+        getData(); // 옵션 데이터 받아옴
+        if(pushSw)
         sendNotification(remoteMessage.getData().get("message"));
     }
 
