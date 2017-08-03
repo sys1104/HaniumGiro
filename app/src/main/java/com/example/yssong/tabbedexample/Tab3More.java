@@ -14,6 +14,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 /**
  * Created by YSSONG on 2017-04-16.
  */
+//Option->QR코드 버튼누르면 실행
 
 public class Tab3More extends Fragment {
     private IntentIntegrator qrScan;
