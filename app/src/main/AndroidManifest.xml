@@ -57,7 +57,10 @@
         <activity android:name=".Option"
             android:label="@string/option"
             >
-
+        </activity>
+        <activity android:name=".QRCodeScanner"
+            android:label="@string/option"
+            >
         </activity>
         <activity android:name=".RegisterAccount"></activity>
         <activity android:name=".RegisterAccountOK"></activity>
