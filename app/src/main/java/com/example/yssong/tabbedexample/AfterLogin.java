@@ -1,5 +1,8 @@
 package com.example.yssong.tabbedexample;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -9,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class AfterLogin extends AppCompatActivity {
 
@@ -64,7 +68,16 @@ public class AfterLogin extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
+            Toast.makeText(AfterLogin.this, "로그아웃 되었습니다", Toast.LENGTH_SHORT).show();
+            SharedPreferences autoLogin = getSharedPreferences("autoLogin", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor autoLoginEdit = autoLogin.edit();
+            autoLoginEdit.clear();
+            //꼭 commit()을 해줘야 값이 저장됩니다 ㅎㅎ
+            autoLoginEdit.apply();
+            Intent intent = new Intent(AfterLogin.this, MainActivity.class);
+            startActivity(intent);
+            finish();
             return true;
         }
 
