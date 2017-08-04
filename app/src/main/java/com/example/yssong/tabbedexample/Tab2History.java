@@ -1,6 +1,5 @@
 package com.example.yssong.tabbedexample;
 
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,12 +16,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.InputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by YSSONG on 2017-04-16.
@@ -40,6 +42,7 @@ public class Tab2History extends Fragment {
     ArrayList<HashMap<String, String>> mArrayList;
     ListView mlistView;
     String mJsonString;
+    String result;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,12 +51,21 @@ public class Tab2History extends Fragment {
         mlistView = (ListView) rootView.findViewById(R.id.jsonlistview2);
         mArrayList = new ArrayList<>();
 
-        GetData task = new GetData();
-        task.execute("http://211.253.26.217:1024/chat.jsp");
+        MainActivity temp = new MainActivity();
+        String ID = temp.u_id;
+        try {
+            result = new CustomTask().execute(ID).get();
+            Log.i("로그값", result);
+            showResult(result);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
         return rootView;
     }
 
-    private class GetData extends AsyncTask<String, Void, String> {
+    /*private class GetData extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
         String errorString = null;
 
@@ -135,12 +147,47 @@ public class Tab2History extends Fragment {
             }
 
         }
+    }*/
+    class CustomTask extends AsyncTask<String, Void, String> {
+        String sendMsg, receiveMsg;
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                String str;
+                URL url = new URL("http://211.253.26.217:1024/History.jsp");
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                conn.setRequestMethod("POST");
+                OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
+                sendMsg = "id="+strings[0];
+                osw.write(sendMsg);
+                osw.flush();
+                if(conn.getResponseCode() == conn.HTTP_OK) {
+                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuffer buffer = new StringBuffer();
+                    while ((str = reader.readLine()) != null) {
+                        buffer.append(str);
+                    }
+                    receiveMsg = buffer.toString();
+
+                } else {
+                    Log.i("통신 결과", conn.getResponseCode()+"에러");
+                }
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return receiveMsg;
+        }
     }
 
 
-    private void showResult(){
+    private void showResult(String result){
         try {
-            JSONArray jsonArray = new JSONArray(mJsonString);
+            JSONArray jsonArray = new JSONArray(result);
 
             for(int i=0;i<jsonArray.length();i++){
 
