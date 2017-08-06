@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class FriendInfoAdapter extends BaseAdapter {
     private Context context;
-    private List<FriendInfo> frinedInfo ;
+    private List<FriendInfo> frinedInfo;
 
     public FriendInfoAdapter(Context context, List<FriendInfo> frinedInfo ){
         this.context = context;
@@ -43,12 +44,17 @@ public class FriendInfoAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View convertView, ViewGroup parent) { //리스트안에 입력되게될 데이터들을 불러옴
         View v = View.inflate(context,R.layout.friend_info,null);
-
-        TextView friendID = (TextView) v.findViewById(R.id.friend_ID);
-
-        friendID.setText(frinedInfo.get(i).getFriendID());
-
-        v.setTag(frinedInfo.get(i).getFriendID());
+//
+//        ImageView mIcon = (ImageView) v.findViewById(R.id.mIcon);
+//
+//        mIcon.setImageDrawable(frinedInfo.get(i).mIcon);
+//
+//        TextView friendID = (TextView) v.findViewById(R.id.friend_ID);
+//
+//        friendID.setText(frinedInfo.get(i).getFriendID());
+//
+//
+//        v.setTag(frinedInfo.get(i).getFriendID());
 
         return v;
     }

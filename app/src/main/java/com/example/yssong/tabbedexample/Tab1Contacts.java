@@ -1,8 +1,10 @@
 package com.example.yssong.tabbedexample;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +51,11 @@ public class Tab1Contacts  extends Fragment {
     String[] CAccount = new String[100];
     String[] CGiroid = new String[100];
     String result;
+    int[] icons = new int[]{
+            R.drawable.icon
 
+    };
+    int icon=R.drawable.icon;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
@@ -139,9 +145,12 @@ public class Tab1Contacts  extends Fragment {
 
                 String fi = item.getString(TAG_fi);
 
+
+
                 HashMap<String,String> hashMap = new HashMap<>();
 
                 hashMap.put(TAG_fi, fi);
+                hashMap.put("icon",Integer.toString(icon));
                 mArrayList.add(hashMap);
 
                 type[i] = fi;
@@ -153,11 +162,13 @@ public class Tab1Contacts  extends Fragment {
 
 
             }
+            String[] from = {"icon",TAG_fi};
+            int[] to = { R.id.mIcon,R.id.friend_ID};
 
             ListAdapter adapter = new SimpleAdapter(
                   getActivity(), mArrayList, R.layout.friend_info,
-                    new String[]{TAG_fi},
-                    new int[]{R.id.friend_ID}
+                    from,
+                    to
             );
 
             mlistView.setAdapter(adapter);
