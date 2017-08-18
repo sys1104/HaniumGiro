@@ -21,6 +21,7 @@ public class BillView extends AppCompatActivity {
         setContentView(R.layout.bill_view);
         Button b = (Button) findViewById(R.id.button_seeDetail);
 //        Button home = (Button) findViewById(R.id.home);
+        Button goBack =(Button)findViewById(R.id.go_back);
 
         textView1 = (TextView) findViewById(R.id.textView01);
         textView2 = (TextView) findViewById(R.id.textView02);
@@ -33,7 +34,15 @@ public class BillView extends AppCompatActivity {
         final String c_account = intent.getStringExtra("c_account");
         final String c_giroid = intent.getStringExtra("c_giroid");
 
-
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        AfterLogin.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent);
+            }
+        });
 
         textView1.setText(b_type);
         textView2.setText(year_month.substring(5,7)+ " 월\n" + b_type + " 요금은\n" + price + "원 입니다.");

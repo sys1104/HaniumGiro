@@ -41,6 +41,8 @@ public class BillDetail extends AppCompatActivity{
                             "> \n<지로 발행일 : " + year_month +">");
 
 
+
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
