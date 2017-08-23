@@ -15,8 +15,6 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
 import com.tsengvn.typekit.TypekitContextWrapper;
 
 import org.json.JSONArray;
@@ -48,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
-        FirebaseInstanceId.getInstance().getToken();
+
+
         SharedPreferences autoLogin = getSharedPreferences("autoLogin", Activity.MODE_PRIVATE);
         userId = (EditText) findViewById(R.id.editText2);
         userPwd = (EditText) findViewById(R.id.editText3);

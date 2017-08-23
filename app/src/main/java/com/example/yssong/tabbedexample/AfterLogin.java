@@ -3,6 +3,7 @@ package com.example.yssong.tabbedexample;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,9 +11,29 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import static android.os.Build.ID;
 
 public class AfterLogin extends AppCompatActivity {
 
@@ -31,10 +52,28 @@ public class AfterLogin extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    loadJsp task;
+    MainActivity temp = new MainActivity();
+    String ID = temp.u_id;
+    String Token = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.afterlogin);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        Token = FirebaseInstanceId.getInstance().getToken();
+
+        /** 토큰값 출력해보기 **/
+        /*Toast toast = Toast.makeText(this, FirebaseInstanceId.getInstance().getToken(),
+         Toast.LENGTH_SHORT);
+        toast.show();*/
+
+
+
+        task = new loadJsp();
+        task.execute();
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -128,4 +167,49 @@ public class AfterLogin extends AppCompatActivity {
             return null;
         }
     }
+
+    class loadJsp extends AsyncTask<Void, String, Void> {
+
+        @Override
+        protected Void doInBackground(Void... param) {
+            // TODO Auto-generated method stub
+
+
+            try {
+                HttpClient client = new DefaultHttpClient();
+
+
+                // jsp 주소
+                String postURL = "http://211.253.26.217:1024/FCMTokenRegister.jsp";
+
+
+                HttpPost post = new HttpPost(postURL);
+                ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+
+                //파
+
+                params.add(new BasicNameValuePair("id", ID));
+                params.add(new BasicNameValuePair("Token", Token));
+
+
+                UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);
+                post.setEntity(ent);
+
+                HttpResponse responsePOST = client.execute(post);
+                HttpEntity resEntity = responsePOST.getEntity();
+                if (resEntity != null) {
+                    Log.i("RESPONSE", EntityUtils.toString(resEntity));
+                }
+
+            }//endTry
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+
+
+        } //end doInBackground
+
+    } //endLoadJsp
 }
