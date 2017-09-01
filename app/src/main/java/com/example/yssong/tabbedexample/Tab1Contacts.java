@@ -50,6 +50,7 @@ public class Tab1Contacts  extends Fragment {
     String[] bDue = new String[100];
     String[] CAccount = new String[100];
     String[] CGiroid = new String[100];
+    String[] bId = new String[100];
     String result;
     int[] icons = new int[]{
             R.drawable.icon
@@ -87,6 +88,7 @@ public class Tab1Contacts  extends Fragment {
                 intent.putExtra("due",bDue[position]);
                 intent.putExtra("c_account",CAccount[position]);
                 intent.putExtra("c_giroid",CGiroid[position]);
+                intent.putExtra("bill_id",bId[position]);
                 startActivity(intent);
                 //position 값으로 몇번째 목록이 넘어온건지 정의 해주어야하는데
                 //아직 해결하지못함.
@@ -159,6 +161,7 @@ public class Tab1Contacts  extends Fragment {
                 bDue[i] = item.getString("due");
                 CAccount[i] = item.getString("c_account");
                 CGiroid[i] = item.getString("c_giroid");
+                bId[i] = item.getString("bill_id");
 
 
             }

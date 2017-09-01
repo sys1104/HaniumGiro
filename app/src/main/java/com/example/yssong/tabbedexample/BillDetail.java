@@ -32,13 +32,16 @@ public class BillDetail extends AppCompatActivity{
         final String due = intent.getStringExtra("due");
         final String c_account = intent.getStringExtra("c_account");
         final String c_giroid = intent.getStringExtra("c_giroid");
+        final String bill_id = intent.getStringExtra("bill_id");
 
         textView1.setText(b_type);
         textView2.setText("<전자납부번호 : " + c_giroid+
-                            ">\n" + year_month.substring(5,7)+ " 월 " + b_type + " 요금은\n" + price + "원 입니다.\n" +
+                            ">\n" + year_month.substring(5,7)+ " 월 " + b_type + " 요금은\n" + price + "원 입니다.\n\n" +
                             "<납부계좌번호 : " +c_account +
-                            ">\n<납부기한 : " +due +
-                            "> \n<지로 발행일 : " + year_month +">");
+                            ">\n\n<납부기한 : " +due +
+                            "> \n\n<지로 발행일 : " + year_month +">");
+
+
 
 
         b.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +56,7 @@ public class BillDetail extends AppCompatActivity{
                 intent.putExtra("due",due);
                 intent.putExtra("c_account",c_account);
                 intent.putExtra("c_giroid",c_giroid);
+                intent.putExtra("bill_id",bill_id);
 
                 startActivity(intent); // 다음 화면으로 넘어간다
             }

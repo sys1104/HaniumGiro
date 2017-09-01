@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/HaniumGiro.iml" filepath="$PROJECT_DIR$/HaniumGiro.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Giro.iml" filepath="$PROJECT_DIR$/Giro.iml" />
+>>>>>>> 93044701f3749aa97aaf7086510f698317e0af33
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/giro.iml" filepath="$PROJECT_DIR$/giro.iml" />
     </modules>
