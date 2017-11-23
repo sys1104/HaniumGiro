@@ -11,6 +11,8 @@ import android.support.v4.app.NotificationCompat;
 
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 
 
 public class FirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService{
@@ -24,9 +26,15 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 
 
     public void onMessageReceived(RemoteMessage remoteMessage) {
+        String test="";
+        try {
+            test = URLDecoder.decode(remoteMessage.getData().get("message"),"euc-kr");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         getData(); // 옵션 데이터 받아옴
         if(pushSw)
-        sendNotification(remoteMessage.getData().get("message"));
+        sendNotification(test);
     }
 
     private void sendNotification(String messageBody) {
